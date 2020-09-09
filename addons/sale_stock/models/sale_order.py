@@ -106,7 +106,7 @@ class SaleOrder(models.Model):
     @api.onchange('company_id')
     def _onchange_company_id(self):
         if self.company_id:
-            warehouse_id = self.env['ir.default'].get('sale.order', 'warehouse_id', company_id=self.company_id.id)
+            warehouse_id = self.env['ir.default'].get_model_defaults('sale.order').get('warehouse_id')
             self.warehouse_id = warehouse_id or self.env['stock.warehouse'].search([('company_id', '=', self.company_id.id)], limit=1)
 
     @api.onchange('partner_shipping_id')
@@ -237,7 +237,7 @@ class SaleOrderLine(models.Model):
         # We first loop over the SO lines to group them by warehouse and schedule
         # date in order to batch the read of the quantities computed field.
         for line in self:
-            if not line.display_qty_widget:
+            if not (line.product_id and line.display_qty_widget):
                 continue
             line.warehouse_id = line.order_id.warehouse_id
             if line.order_id.commitment_date:

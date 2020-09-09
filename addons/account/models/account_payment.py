@@ -212,7 +212,11 @@ class account_payment(models.Model):
                 self.partner_bank_account_id = self.partner_id.commercial_partner_id.bank_ids[0]
             else:
                 self.partner_bank_account_id = False
-        return {'domain': {'partner_bank_account_id': [('partner_id', 'in', [self.partner_id.id, self.partner_id.commercial_partner_id.id])]}}
+        if self.payment_type == 'inbound' and self.invoice_ids:
+            partner_ids = [self.invoice_ids[0].company_id.partner_id.id, self.invoice_ids[0].company_id.partner_id.commercial_partner_id.id]
+        else:
+            partner_ids = [self.partner_id.id, self.partner_id.commercial_partner_id.id]
+        return {'domain': {'partner_bank_account_id': [('partner_id', 'in', partner_ids)]}}
 
     @api.onchange('payment_type')
     def _onchange_payment_type(self):
@@ -364,6 +368,7 @@ class account_payment(models.Model):
 
     @api.depends('invoice_ids', 'payment_type', 'partner_type', 'partner_id')
     def _compute_destination_account_id(self):
+        self.destination_account_id = False
         for payment in self:
             if payment.invoice_ids:
                 payment.destination_account_id = payment.invoice_ids[0].mapped(
@@ -374,15 +379,16 @@ class account_payment(models.Model):
                     raise UserError(_('There is no Transfer Account defined in the accounting settings. Please define one to be able to confirm this transfer.'))
                 payment.destination_account_id = payment.company_id.transfer_account_id.id
             elif payment.partner_id:
+                partner = payment.partner_id.with_context(force_company=payment.company_id.id)
                 if payment.partner_type == 'customer':
-                    payment.destination_account_id = payment.partner_id.property_account_receivable_id.id
+                    payment.destination_account_id = partner.property_account_receivable_id.id
                 else:
-                    payment.destination_account_id = payment.partner_id.property_account_payable_id.id
+                    payment.destination_account_id = partner.property_account_payable_id.id
             elif payment.partner_type == 'customer':
-                default_account = self.env['ir.property'].get('property_account_receivable_id', 'res.partner')
+                default_account = self.env['ir.property'].with_context(force_company=payment.company_id.id).get('property_account_receivable_id', 'res.partner')
                 payment.destination_account_id = default_account.id
             elif payment.partner_type == 'supplier':
-                default_account = self.env['ir.property'].get('property_account_payable_id', 'res.partner')
+                default_account = self.env['ir.property'].with_context(force_company=payment.company_id.id).get('property_account_payable_id', 'res.partner')
                 payment.destination_account_id = default_account.id
 
     @api.depends('move_line_ids.matched_debit_ids', 'move_line_ids.matched_credit_ids')
@@ -694,7 +700,7 @@ class account_payment(models.Model):
                 # ==== 'inbound' / 'outbound' ====
                 if rec.invoice_ids:
                     (moves[0] + rec.invoice_ids).line_ids \
-                        .filtered(lambda line: not line.reconciled and line.account_id == rec.destination_account_id)\
+                        .filtered(lambda line: not line.reconciled and line.account_id == rec.destination_account_id and not (line.account_id == line.payment_id.writeoff_account_id and line.name == line.payment_id.writeoff_label))\
                         .reconcile()
             elif rec.payment_type == 'transfer':
                 # ==== 'transfer' ====
@@ -708,7 +714,7 @@ class account_payment(models.Model):
         moves = self.mapped('move_line_ids.move_id')
         moves.filtered(lambda move: move.state == 'posted').button_draft()
         moves.with_context(force_delete=True).unlink()
-        self.write({'state': 'draft'})
+        self.write({'state': 'draft', 'invoice_ids': False})
 
     def _get_invoice_payment_amount(self, inv):
         """

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.invoice_test_common import InvoiceTestCommon
+from odoo.addons.account.tests.account_test_savepoint import AccountTestInvoicingCommon
 from odoo.tests import tagged, new_test_user
 from odoo.tests.common import Form
 from odoo import fields
@@ -7,13 +7,13 @@ from odoo.exceptions import ValidationError, UserError
 
 
 @tagged('post_install', '-at_install')
-class TestAccountMove(InvoiceTestCommon):
+class TestAccountMove(AccountTestInvoicingCommon):
 
     @classmethod
-    def setUpClass(cls):
-        super(TestAccountMove, cls).setUpClass()
+    def setUpClass(cls, chart_template_ref=None):
+        super().setUpClass(chart_template_ref=chart_template_ref)
 
-        tax_repartition_line = cls.company_data['default_tax_sale'].invoice_repartition_line_ids\
+        tax_repartition_line = cls.company_data['default_tax_sale'].refund_repartition_line_ids\
             .filtered(lambda line: line.repartition_type == 'tax')
         cls.test_move = cls.env['account.move'].create({
             'type': 'entry',
@@ -448,9 +448,9 @@ class TestAccountMove(InvoiceTestCommon):
             'price_include': True,
             'include_base_amount': False,
         })
-        self.account = self.env['account.account'].search([('deprecated', '=', False)], limit=1)
+        self.account = self.company_data['default_account_revenue']
 
-        move_form = Form(self.env['account.move'])
+        move_form = Form(self.env['account.move'].with_context(default_move_type='entry'))
 
         # Create a new account.move.line with debit amount.
         with move_form.line_ids.new() as debit_line:
@@ -475,3 +475,13 @@ class TestAccountMove(InvoiceTestCommon):
             {'name': 'included_tax_line',        'debit': 200.0,     'credit': 0.0,      'tax_ids': [],                                  'tax_line_id': self.included_percent_tax.id},
             {'name': 'credit_line_1',            'debit': 0.0,       'credit': 1200.0,   'tax_ids': [],                                  'tax_line_id': False},
         ])
+
+    def test_misc_prevent_unlink_posted_items(self):
+        # You cannot remove journal items if the related journal entry is posted.
+        self.test_move.action_post()
+        with self.assertRaises(UserError), self.cr.savepoint():
+            self.test_move.line_ids.unlink()
+
+        # You can remove journal items if the related journal entry is draft.
+        self.test_move.button_draft()
+        self.test_move.line_ids.unlink()

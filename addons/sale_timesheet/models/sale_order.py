@@ -67,11 +67,7 @@ class SaleOrder(models.Model):
         for sale_order in self:
             duration_list = []
             for timesheet in sale_order.timesheet_ids:
-                timesheet_uom = timesheet.product_uom_id or timesheet.company_id.project_time_mode_id
-                if timesheet_uom != sale_order.timesheet_encode_uom_id and timesheet_uom.category_id == sale_order.timesheet_encode_uom_id.category_id:
-                    duration_list.append(timesheet_uom._compute_quantity(timesheet.unit_amount, sale_order.timesheet_encode_uom_id))
-                else:
-                    duration_list.append(timesheet.unit_amount)
+                duration_list.append(timesheet.unit_amount)
             sale_order.timesheet_total_duration = sum(duration_list)
 
     @api.onchange('project_id')
@@ -139,9 +135,7 @@ class SaleOrder(models.Model):
     def action_view_timesheet(self):
         self.ensure_one()
         action = self.env.ref('sale_timesheet.timesheet_action_from_sales_order').read()[0]
-        ctx = dict(self.env.context or {})
-        ctx.pop('group_by', None)
-        action['context'] = ctx  # erase default filters
+        action['context'] = {}  # erase default filters
         if self.timesheet_count > 0:
             action['domain'] = [('so_line', 'in', self.order_line.ids)]
         else:

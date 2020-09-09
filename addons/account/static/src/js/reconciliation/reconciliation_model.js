@@ -956,7 +956,7 @@ var StatementModel = BasicModel.extend({
                 });
                 var args = [prop.tax_ids.map(function(el){return el.id;}), prop.base_amount, formatOptions.currency_id];
                 var add_context = {'round': true};
-                if(prop.tax_ids.length === 1 && line.createForm.force_tax_included)
+                if(prop.tax_ids.length === 1 && line.createForm && line.createForm.force_tax_included)
                     add_context.force_price_include = true;
                 tax_defs.push(self._rpc({
                         model: 'account.tax',
@@ -1692,6 +1692,7 @@ var ManualModel = StatementModel.extend({
             line.reconciliation_proposition = _.filter(line.reconciliation_proposition, function (p) {
                 return p.id !== prop.id && p.id !== prop.link && p.link !== prop.id && (!p.link || p.link !== prop.link);
             });
+            line.mv_lines_match = line.mv_lines_match || [];
             line.mv_lines_match.unshift(prop);
 
             // No proposition left and then, reset the st_line partner.

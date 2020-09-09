@@ -6,10 +6,9 @@
 # Sergo S, 2019
 # Андрей Гусев <gaussgss@gmail.com>, 2019
 # Yaroslav Panychev <walkmanyd@yandex.ru>, 2019
-# Denis Baranov <baranov@itlibertas.com>, 2019
 # Gennady Marchenko <gennadym@gmail.com>, 2019
 # Oleg Kuryan <oleg@ventor.tech>, 2019
-# Konstantin Korovin <korovin74@gmail.com>, 2019
+# Константин Коровин <korovin74@gmail.com>, 2019
 # Collex100, 2019
 # sergeiruzkiicode <sergei.ruzki@icode.by>, 2019
 # Disaster Disasterov <mobarbitr@gmail.com>, 2019
@@ -23,7 +22,12 @@
 # Anton Ilchenko <anton.wmt@gmail.com>, 2019
 # Ivan Yelizariev <yelizariev@it-projects.info>, 2020
 # jerome hanke <jhk@odoo.com>, 2020
+# Анищук Сергей <anishukserg@gmail.com>, 2020
 # Martin Trigaux, 2020
+# Denis Baranov <baranov@itlibertas.com>, 2020
+# GulShar Mungatova <mungatova@gmail.com>, 2020
+# Irina Fedulova <istartlin@gmail.com>, 2020
+# Ekaterina <nawsikaya@bk.ru>, 2020
 # 
 msgid ""
 msgstr ""
@@ -31,7 +35,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-27 09:21+0000\n"
 "PO-Revision-Date: 2019-08-26 09:06+0000\n"
-"Last-Translator: Martin Trigaux, 2020\n"
+"Last-Translator: Ekaterina <nawsikaya@bk.ru>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,7 +105,7 @@ msgstr " %s (копия)"
 #: code:addons/account/models/account_move.py:0
 #, python-format
 msgid "%s (rounding)"
-msgstr "(округление)"
+msgstr "%s (округление)"
 
 #. module: account
 #: code:addons/account/models/account.py:0
@@ -143,12 +147,12 @@ msgstr "2 Месяца"
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_21days
 msgid "21 Days"
-msgstr ""
+msgstr "21 день"
 
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_30days
 msgid "30 Days"
-msgstr ""
+msgstr "30 дней"
 
 #. module: account
 #: model:account.payment.term,name:account.account_payment_term_advance
@@ -729,7 +733,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
 msgid "<strong>Subtotal</strong>"
-msgstr "<strong>Промежуточный итог</strong>"
+msgstr "<strong>Подытог</strong>"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_journal
@@ -1244,7 +1248,7 @@ msgstr ""
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_search
 msgid "Account with Entries"
-msgstr ""
+msgstr "Аккаунт с записями"
 
 #. module: account
 #: model:ir.actions.server,name:account.ir_cron_auto_post_draft_entry_ir_actions_server
@@ -6018,7 +6022,7 @@ msgstr ""
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_move__invoice_line_ids
 msgid "Invoice lines"
-msgstr ""
+msgstr "Позиции счета"
 
 #. module: account
 #: model:mail.message.subtype,description:account.mt_invoice_paid
@@ -6305,7 +6309,7 @@ msgstr ""
 #: model:ir.ui.menu,name:account.menu_action_account_journal_group_list
 #: model_terms:ir.ui.view,arch_db:account.view_account_journal_group_form
 msgid "Journal Groups"
-msgstr ""
+msgstr "Группы журналов"
 
 #. module: account
 #: model:ir.model,name:account.model_account_move_line
@@ -7393,6 +7397,7 @@ msgstr ""
 #. module: account
 #: model:ir.model.fields.selection,name:account.selection__account_invoice_report__invoice_payment_state__not_paid
 #: model:ir.model.fields.selection,name:account.selection__account_move__invoice_payment_state__not_paid
+#: model_terms:ir.ui.view,arch_db:account.view_account_invoice_filter
 msgid "Not Paid"
 msgstr "Не Оплачен"
 
@@ -7510,7 +7515,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account.field_account_move__message_has_error_counter
 #: model:ir.model.fields,field_description:account.field_account_payment__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Количество ошибок"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_bank_statement__message_needaction_counter
@@ -8655,6 +8660,11 @@ msgid ""
 "to the balance of the corresponding lines in the report. A formula cannot "
 "refer to another line using a formula."
 msgstr ""
+"Выражение Python используется для вычисления значения полной линии. Это поле"
+" является взаимоисключающим с tag_name, настройка его делает линию полной. В"
+" качестве переменных в этом выражении могут использоваться коды статей "
+"налогового отчета для указания на баланс соответствующих строк отчета. "
+"Формула не может относиться к другой строке, использующей формулу."
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.res_config_settings_view_form
@@ -8731,7 +8741,7 @@ msgstr "Получатели"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.account_accrual_accounting_wizard_form_view
 msgid "Recognize on"
-msgstr ""
+msgstr "Распознать в"
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_move_line__recompute_tax_line
@@ -8857,7 +8867,7 @@ msgstr "Возврат"
 #: code:addons/account/models/account_move.py:0
 #, python-format
 msgid "Refund Created"
-msgstr ""
+msgstr "Возврат создан"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_move_reversal
@@ -8868,7 +8878,7 @@ msgstr "Дата Возврата"
 #: model:ir.model.fields,field_description:account.field_account_tax_repartition_line__refund_tax_id
 #: model:ir.model.fields,field_description:account.field_account_tax_repartition_line_template__refund_tax_id
 msgid "Refund Tax"
-msgstr ""
+msgstr "Возврат налога"
 
 #. module: account
 #: code:addons/account/models/account_payment.py:0
@@ -8935,7 +8945,7 @@ msgstr ""
 #: model:ir.model.fields,help:account.field_account_tax__refund_repartition_line_ids
 #: model:ir.model.fields,help:account.field_account_tax_template__refund_repartition_line_ids
 msgid "Repartition when the tax is used on a refund"
-msgstr ""
+msgstr "Перераспределение при использовании налога при возврате"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_tax__invoice_repartition_line_ids
@@ -8966,7 +8976,7 @@ msgstr "Адрес ответа"
 #: model:ir.model,name:account.model_ir_actions_report
 #: model:ir.model.fields,field_description:account.field_account_tax_report_line__report_action_id
 msgid "Report Action"
-msgstr "действие отчета"
+msgstr "Отчет о действияx "
 
 #. module: account
 #: model:ir.model.fields,field_description:account.field_tax_adjustments_wizard__tax_report_line_id
@@ -9002,7 +9012,7 @@ msgstr "банк партнера"
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_payment_form
 msgid "Reset To Draft"
-msgstr ""
+msgstr "Переместить в черновики"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
@@ -10180,7 +10190,7 @@ msgstr "Группа Налога"
 #. module: account
 #: model:ir.actions.act_window,name:account.action_tax_group
 msgid "Tax Groups"
-msgstr ""
+msgstr "Группы налогов"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.report_invoice_document
@@ -10444,6 +10454,9 @@ msgid ""
 "                                   This does not especially correspond to the invoices reconciled with the payment,\n"
 "                                   as it can have been generated first, and reconciled later"
 msgstr ""
+"Техническая область, содержащая счет-фактуру, по которой был произведен "
+"платеж. Это, в частности, не соответствует счетам-фактурам, выверенным с "
+"платежом,. поскольку они могли быть получены сначала и выверены позднее"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_move_line__display_type
@@ -10475,7 +10488,7 @@ msgstr ""
 #. module: account
 #: model:ir.model.fields,help:account.field_account_move__bank_partner_id
 msgid "Technical field to get the domain on the bank"
-msgstr ""
+msgstr "Техническое поле для получения домена в банке"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_bank_statement__journal_type
@@ -12058,7 +12071,7 @@ msgstr "Использовать шаблон"
 #. module: account
 #: model:ir.model.fields,field_description:account.field_account_account__used
 msgid "Used"
-msgstr ""
+msgstr "Использовано"
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_account_type__include_initial_balance
@@ -12904,6 +12917,12 @@ msgstr ""
 "Вы должны настроить 'Счет Потерь на Обменном Курсе' в параметрах "
 "бухгалтерских настроек, чтобы управлять автоматически бухгалтерскими "
 "записями, связанными с различиями между обменными курсами."
+
+#. module: account
+#: code:addons/account/models/account_cash_rounding.py:33
+#, python-format
+msgid "Please set a positive rounding value."
+msgstr ""
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.view_account_position_form

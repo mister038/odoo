@@ -1,19 +1,20 @@
 # -*- coding: utf-8 -*-
-from odoo.addons.account.tests.invoice_test_common import InvoiceTestCommon
+from odoo.addons.account.tests.account_test_savepoint import AccountTestInvoicingCommon
 from odoo.tests.common import Form
 from odoo.tests import tagged
 from odoo import fields
 from odoo.exceptions import UserError
 
 from unittest.mock import patch
+from datetime import timedelta
 
 
 @tagged('post_install', '-at_install')
-class TestAccountMoveOutInvoiceOnchanges(InvoiceTestCommon):
+class TestAccountMoveOutInvoiceOnchanges(AccountTestInvoicingCommon):
 
     @classmethod
-    def setUpClass(cls):
-        super(TestAccountMoveOutInvoiceOnchanges, cls).setUpClass()
+    def setUpClass(cls, chart_template_ref=None):
+        super().setUpClass(chart_template_ref=chart_template_ref)
 
         cls.invoice = cls.init_invoice('out_invoice')
 
@@ -1836,6 +1837,22 @@ class TestAccountMoveOutInvoiceOnchanges(InvoiceTestCommon):
             'ref': 'Reversal of: %s, %s' % (self.invoice.name, move_reversal.reason),
             'invoice_payment_state': 'paid',
         })
+
+    def test_out_invoice_create_refund_auto_post(self):
+        self.invoice.action_post()
+
+        move_reversal = self.env['account.move.reversal'].with_context(active_model="account.move", active_ids=self.invoice.ids).create({
+            'date': fields.Date.today() + timedelta(days=7),
+            'reason': 'no reason',
+            'refund_method': 'modify',
+        })
+        move_reversal.reverse_moves()
+        refund = self.env['account.move'].search([('type', '=', 'out_refund'), ('company_id', '=', self.invoice.company_id.id)])
+
+        self.assertRecordValues(refund, [{
+            'state': 'draft',
+            'auto_post': True,
+        }])
 
     def test_out_invoice_create_1(self):
         # Test creating an account_move with the least information.
