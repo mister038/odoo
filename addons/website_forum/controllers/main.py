@@ -131,6 +131,8 @@ class WebsiteForum(WebsiteProfile):
             url_args['search'] = search
         if filters:
             url_args['filters'] = filters
+        if my:
+            url_args['my'] = my
         pager = request.website.pager(url=url, total=question_count, page=page,
                                       step=self._post_per_page, scope=self._post_per_page,
                                       url_args=url_args)
@@ -164,7 +166,10 @@ class WebsiteForum(WebsiteProfile):
             fields=['id', 'name'],
             limit=int(limit),
         )
-        return json.dumps(data)
+        return request.make_response(
+            json.dumps(data),
+            headers=[("Content-Type", "application/json")]
+        )
 
     @http.route(['/forum/<model("forum.forum"):forum>/tag', '/forum/<model("forum.forum"):forum>/tag/<string:tag_char>'], type='http', auth="public", website=True, sitemap=False)
     def tags(self, forum, tag_char=None, **post):

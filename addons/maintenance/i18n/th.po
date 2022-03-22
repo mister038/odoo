@@ -12,6 +12,8 @@
 # Seksan Poltree <seksan.poltree@gmail.com>, 2020
 # Khwunchai Jaengsawang <khwunchai.j@ku.th>, 2020
 # Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2020
+# Odoo Thaidev <odoothaidev@gmail.com>, 2021
+# Wichanon Jamwutthipreecha, 2021
 # 
 msgid ""
 msgstr ""
@@ -19,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 12:34+0000\n"
 "PO-Revision-Date: 2019-08-26 09:11+0000\n"
-"Last-Translator: Pornvibool Tippayawat <pornvibool.t@gmail.com>, 2020\n"
+"Last-Translator: Wichanon Jamwutthipreecha, 2021\n"
 "Language-Team: Thai (https://www.transifex.com/odoo/teams/41243/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +57,7 @@ msgstr ""
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
 msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
@@ -70,7 +72,7 @@ msgstr ""
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
 msgid "<span>Reporting</span>"
-msgstr ""
+msgstr "<span>รายงาน</span>"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
@@ -93,6 +95,8 @@ msgid ""
 "A Python dictionary that will be evaluated to provide default values when "
 "creating new records for this alias."
 msgstr ""
+"A Python dictionary that will be evaluated to provide default values when "
+"creating new records for this alias."
 
 #. module: maintenance
 #: model:maintenance.equipment,name:maintenance.equipment_computer3
@@ -123,19 +127,19 @@ msgstr "กิจกรรม"
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_exception_decoration
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "การตกแต่งข้อยกเว้นกิจกรรม"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_state
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "สถานะกิจกรรม"
 
 #. module: maintenance
 #: model:ir.actions.act_window,name:maintenance.mail_activity_type_action_config_maintenance
 #: model:ir.ui.menu,name:maintenance.maintenance_menu_config_activity_type
 msgid "Activity Types"
-msgstr ""
+msgstr "Activity Types"
 
 #. module: maintenance
 #: model_terms:ir.actions.act_window,help:maintenance.hr_equipment_action
@@ -177,12 +181,12 @@ msgstr "นามแฝง"
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_contact
 msgid "Alias Contact Security"
-msgstr ""
+msgstr "Alias Contact Security"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_name
 msgid "Alias Name"
-msgstr ""
+msgstr "ชื่อเรียก"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_domain
@@ -192,7 +196,7 @@ msgstr "ชื่อโดเมน"
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_model_id
 msgid "Aliased Model"
-msgstr ""
+msgstr "Aliased Model"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
@@ -244,7 +248,7 @@ msgstr "มอบหมายให้"
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__message_attachment_count
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "จำนวนไฟล์แนบ"
 
 #. module: maintenance
 #: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__kanban_state__blocked
@@ -425,7 +429,7 @@ msgstr "เสร็จสิ้น"
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_kanban
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "เมนูแบบดรอปดาว์น"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__duration
@@ -451,7 +455,7 @@ msgstr "วันที่มีผล"
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_category_view_form
 msgid "Email Alias"
-msgstr ""
+msgstr "นามแฝงอีเมล"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__alias_id
@@ -464,7 +468,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__email_cc
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
 msgid "Email cc"
-msgstr ""
+msgstr "cc อีเมล"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__equipment_count
@@ -556,7 +560,7 @@ msgstr "ผู้ติดตาม (คู่ค้า)"
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 msgid "Future Activities"
-msgstr ""
+msgstr "กิจกรรมในอนาคต"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_category_view_search
@@ -601,6 +605,7 @@ msgid ""
 "ID of the parent record holding the alias (example: project holding the task"
 " creation alias)"
 msgstr ""
+"ID ของเร็กคอร์ดหลักที่มีนามแฝง (ตัวอย่าง: โครงการที่มีนามแฝงในการสร้างงาน)"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_exception_icon
@@ -612,7 +617,7 @@ msgstr "ไอคอน"
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__activity_exception_icon
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "ไอคอนเพื่อระบุกิจกรรมข้อยกเว้น"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__message_needaction
@@ -629,7 +634,7 @@ msgstr "ถ้าเลือก ข้อความใหม่จะต้�
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__message_has_error
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "หากเลือกข้อความบางข้อความมีข้อผิดพลาดในการจัดส่ง"
 
 #. module: maintenance
 #: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__kanban_state__normal
@@ -658,7 +663,7 @@ msgstr "เป็นผู้ติดตาม"
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__kanban_state
 msgid "Kanban State"
-msgstr ""
+msgstr "สถานะคัมบัง"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment____last_update
@@ -691,12 +696,12 @@ msgstr "อัพเดทครั้งสุดท้ายเมื่อ"
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 msgid "Late Activities"
-msgstr ""
+msgstr "กิจกรรมล่าสุด"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__email_cc
 msgid "List of cc from incoming emails."
-msgstr ""
+msgstr "รายการ cc จากอีเมลขาเข้า"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__location
@@ -718,7 +723,7 @@ msgstr "ต่ำ"
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__message_main_attachment_id
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "ไฟล์แนบหลัก"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__maintenance_ids
@@ -848,7 +853,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__message_has_error
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "ส่งข้อความผิดพลาด"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__message_ids
@@ -870,7 +875,7 @@ msgstr "โมเดล"
 #. module: maintenance
 #: model:maintenance.equipment.category,name:maintenance.equipment_monitor
 msgid "Monitors"
-msgstr ""
+msgstr "ตรวจสอบ"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
@@ -898,19 +903,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_date_deadline
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "วันที่สิ้นสุดกิจกรรมถัดไป"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_summary
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "สรุปกิจกรรมถัดไป"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_type_id
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "ประเภทกิจกรรมถัดไป"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_form
@@ -964,28 +969,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__message_has_error_counter
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "จำนวนข้อผิดพลาด"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__message_needaction_counter
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__message_needaction_counter
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "จํานวนข้อความที่ต้องการการดําเนินการ"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__message_has_error_counter
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__message_has_error_counter
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "จํานวนข้อความที่มีข้อผิดพลาดในการส่ง"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__message_unread_counter
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__message_unread_counter
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "จํานวนข้อความที่ยังไม่ได้อ่าน"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__alias_force_thread_id
@@ -994,6 +999,9 @@ msgid ""
 "attached, even if they did not reply to it. If set, this will disable the "
 "creation of new records completely."
 msgstr ""
+"ID ทางเลือกของเธรด (บันทึก) ที่จะแนบข้อความขาเข้าทั้งหมด "
+"แม้ว่าพวกเขาจะไม่ตอบกลับก็ตาม หากตั้งค่าไว้ "
+"การดำเนินการนี้จะปิดใช้งานการสร้างระเบียนใหม่ทั้งหมด"
 
 #. module: maintenance
 #: model:ir.ui.menu,name:maintenance.menu_m_reports_oee
@@ -1012,12 +1020,12 @@ msgstr "เจ้าของ"
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_parent_model_id
 msgid "Parent Model"
-msgstr ""
+msgstr "โมเดลหลัก"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_parent_thread_id
 msgid "Parent Record Thread ID"
-msgstr ""
+msgstr "ID เธรดเรกคอร์ดหลัก"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__alias_parent_model_id
@@ -1026,6 +1034,9 @@ msgid ""
 " necessarily the model given by alias_model_id (example: project "
 "(parent_model) and task (model))"
 msgstr ""
+"โมเดลหลักถือนามแฝง "
+"โมเดลที่มีการอ้างอิงนามแฝงไม่จำเป็นต้องเป็นโมเดลที่กำหนดโดย alias_model_id "
+"(ตัวอย่าง: โครงการ (parent_model) และงาน (แบบจำลอง))"
 
 #. module: maintenance
 #: model:maintenance.equipment.category,name:maintenance.equipment_phone
@@ -1040,6 +1051,10 @@ msgid ""
 "- partners: only authenticated partners\n"
 "- followers: only followers of the related document or members of following channels\n"
 msgstr ""
+"นโยบายการโพสต์ข้อความบนเอกสารโดยใช้เมลล์เกตเวย์\n"
+"- ทุกคน: ทุกคนโพสต์ได้\n"
+"- พาร์ทเนอร์: พาร์ทเนอร์ที่ได้รับการรับรองเท่านั้น\n"
+"- ผู้ติดตาม: เฉพาะผู้ติดตามเอกสารที่เกี่ยวข้องหรือสมาชิกของช่องดังต่อไปนี้\n"
 
 #. module: maintenance
 #: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__maintenance_type__preventive
@@ -1090,7 +1105,7 @@ msgstr ""
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment_category__alias_force_thread_id
 msgid "Record Thread ID"
-msgstr ""
+msgstr "บันทึกหัวข้อ ID"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
@@ -1224,7 +1239,7 @@ msgstr "ตั้งค่า"
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 msgid "Show all records which has next action date is before today"
-msgstr ""
+msgstr "Show all records which has next action date is before today"
 
 #. module: maintenance
 #: model:maintenance.equipment.category,name:maintenance.equipment_software
@@ -1256,6 +1271,10 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"สถานะตามกิจกรรม\n"
+"เกินกำหนด: วันที่ครบกำหนดผ่านไปแล้ว\n"
+"วันนี้: วันที่ทำกิจกรรมคือวันนี้\n"
+"ที่วางแผนไว้: กิจกรรมในอนาคต"
 
 #. module: maintenance
 #: model:mail.message.subtype,description:maintenance.mt_req_status
@@ -1308,6 +1327,9 @@ msgid ""
 " email that does not reply to an existing record will cause the creation of "
 "a new record of this model (e.g. a Project Task)"
 msgstr ""
+"โมเดล (ชนิดเอกสาร Odoo) ซึ่งสอดคล้องกับนามแฝงนี้ อีเมลขาเข้าใดๆ "
+"ที่ไม่ตอบกลับเรกคอร์ดที่มีอยู่จะทำให้เกิดการสร้างเรกคอร์ดใหม่ของโมเดลนี้ "
+"(เช่น งานโครงการ)"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__alias_name
@@ -1315,6 +1337,8 @@ msgid ""
 "The name of the email alias, e.g. 'jobs' if you want to catch emails for "
 "<jobs@example.odoo.com>"
 msgstr ""
+"ชื่อของนามแฝงอีเมล เช่น 'งาน' หากคุณต้องการรับอีเมลสำหรับ "
+"<jobs@example.odoo.com>"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment_category__alias_user_id
@@ -1324,6 +1348,9 @@ msgid ""
 "the sender (From) address, or will use the Administrator account if no "
 "system user is found for that address."
 msgstr ""
+"เจ้าของบันทึกที่สร้างขึ้นเมื่อได้รับอีเมลในนามแฝงนี้ "
+"หากไม่ได้ตั้งค่าฟิลด์นี้ ระบบจะพยายามค้นหาเจ้าของที่ถูกต้องตามที่อยู่ผู้ส่ง "
+"(จาก) หรือจะใช้บัญชีผู้ดูแลระบบหากไม่พบผู้ใช้ระบบสำหรับที่อยู่นั้น"
 
 #. module: maintenance
 #: model:res.groups,comment:maintenance.group_equipment_manager
@@ -1345,7 +1372,7 @@ msgstr "ที่จะทำ"
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 msgid "Today Activities"
-msgstr ""
+msgstr "กิจกรรมวันนี้"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
@@ -1364,12 +1391,12 @@ msgstr ""
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__activity_exception_decoration
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "พิมพ์กิจกรรมข้อยกเว้นบนบันทึก"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 msgid "Unassigned"
-msgstr ""
+msgstr "ไม่ได้มอบหมาย"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
@@ -1413,7 +1440,7 @@ msgstr "ผู้จำหน่าย"
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__partner_ref
 msgid "Vendor Reference"
-msgstr ""
+msgstr "เอกสารอ้างอิงจากผู้ขาย"
 
 #. module: maintenance
 #: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__priority__0
@@ -1441,7 +1468,7 @@ msgstr "วัน"
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_form
 msgid "hours"
-msgstr ""
+msgstr "ชั่วโมง"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_graph

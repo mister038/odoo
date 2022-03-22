@@ -24,12 +24,15 @@
 # sergeiruzkiicode <sergei.ruzki@icode.by>, 2020
 # Евгений Залевский <zal_ei@mail.ru>, 2020
 # Martin Trigaux, 2020
-# Ivan Yelizariev <yelizariev@it-projects.info>, 2020
 # Viktor Pogrebniak <vp@aifil.ru>, 2020
 # Артур Чеботарь <artcha.chebotar@gmail.com>, 2020
 # Vasiliy Korobatov <korobatov@gmail.com>, 2020
 # Алексей Хомяков <alexey.homyakov@gmail.com>, 2020
 # Denis Baranov <baranov@itlibertas.com>, 2020
+# Sergei Ruzki <sergei.ruzki@gmail.com>, 2021
+# Ivan Yelizariev // IEL (ellui) <yelizariev@itpp.dev>, 2021
+# ILMIR <karamov@it-projects.info>, 2021
+# Сергей Шебанин <sergey@shebanin.ru>, 2021
 # 
 msgid ""
 msgstr ""
@@ -37,7 +40,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-23 15:12+0000\n"
 "PO-Revision-Date: 2019-08-26 09:06+0000\n"
-"Last-Translator: Denis Baranov <baranov@itlibertas.com>, 2020\n"
+"Last-Translator: Сергей Шебанин <sergey@shebanin.ru>, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/odoo/teams/41243/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1290,6 +1293,9 @@ msgid ""
 "    Under Construction\n"
 "    "
 msgstr ""
+"\n"
+"    В разработке\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_ebay
@@ -9982,7 +9988,7 @@ msgstr "Банковские счета"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_res_bank_form
 msgid "Bank Address"
-msgstr ""
+msgstr "Адрес банка"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_bank__bic
@@ -10643,6 +10649,12 @@ msgstr ""
 #. module: base
 #: code:addons/base/models/res_lang.py:0
 #, python-format
+msgid "Cannot deactivate a language that is currently used by contacts."
+msgstr ""
+
+#. module: base
+#: code:addons/base/models/res_lang.py:0
+#, python-format
 msgid "Cannot deactivate a language that is currently used by users."
 msgstr "Невозможно отключить язык, пока используется пользователями."
 
@@ -11159,12 +11171,12 @@ msgstr "данные компании"
 #. module: base
 #: model:ir.model,name:base.model_base_document_layout
 msgid "Company Document Layout"
-msgstr ""
+msgstr "Макет документов компании"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company__favicon
 msgid "Company Favicon"
-msgstr ""
+msgstr "Иконка для сайта"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_document_layout__logo
@@ -11578,7 +11590,7 @@ msgstr "Невозможно создать контакт без адреса �
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model__count
 msgid "Count (Incl. Archived)"
-msgstr ""
+msgstr "Количество (включая архивные)"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_country
@@ -12120,7 +12132,7 @@ msgstr "Пользовательский"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_document_layout__custom_colors
 msgid "Custom Colors"
-msgstr ""
+msgstr "Специальный цвет"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_model_fields__state__manual
@@ -12358,7 +12370,7 @@ msgstr "Дней"
 #: model:ir.module.module,shortdesc:base.module_account_debit_note
 #: model:ir.module.module,summary:base.module_account_debit_note
 msgid "Debit Notes"
-msgstr ""
+msgstr "Дебитовые записи"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server__smtp_debug
@@ -12598,7 +12610,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing_sms
 msgid "Design, send and track SMS"
-msgstr ""
+msgstr "Составьте, отправьте и отслеживайте SMS"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing
@@ -13276,7 +13288,7 @@ msgstr "Email-маркетинг"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users__signature
 msgid "Email Signature"
-msgstr ""
+msgstr "Подпись в Email"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner__employee
@@ -13970,7 +13982,7 @@ msgstr "Имя поля"
 #: model:ir.module.category,name:base.module_category_operations_field_service
 #: model:ir.module.module,shortdesc:base.module_industry_fsm
 msgid "Field Service"
-msgstr ""
+msgstr "Выездные сотрудники"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_industry_fsm_report
@@ -14589,7 +14601,7 @@ msgstr "Общие настройки"
 #: model:ir.ui.menu,name:base.menu_wizard_update_translations
 #: model_terms:ir.ui.view,arch_db:base.wizard_update_translations
 msgid "Generate Missing Terms"
-msgstr "Создать отсутствуют условия"
+msgstr "Найти недостающие термины"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_crm
@@ -16331,6 +16343,12 @@ msgid "Invalid model name %r in action definition."
 msgstr "Недопустимое имя модели %r в определении действия."
 
 #. module: base
+#: code:addons/base/models/ir_actions.py:611
+#, python-format
+msgid "many2many fields cannot be evaluated by reference"
+msgstr ""
+
+#. module: base
 #: code:addons/template_inheritance.py:0
 #, python-format
 msgid "Invalid position attribute: '%s'"
@@ -16403,6 +16421,8 @@ msgid ""
 "Invoice & Delivery addresses are used in sales orders. Private addresses are"
 " only visible by authorized users."
 msgstr ""
+"Адреса доставки и для счетов используются в заказах на продажу. Частные "
+"адреса доступны только авторизованным пользователям."
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__res_partner__type__invoice
@@ -17035,7 +17055,7 @@ msgstr "Последняя версия"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users__login_date
 msgid "Latest authentication"
-msgstr ""
+msgstr "Последний вход"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__res_company__font__lato
@@ -17072,7 +17092,7 @@ msgstr "Макет в отчетах"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_iap_lead_enrich
 msgid "Lead Enrichment"
-msgstr ""
+msgstr "Обогащение данных в лидах"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_iap_lead
@@ -17381,12 +17401,12 @@ msgstr "Логотип"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_document_layout__logo_primary_color
 msgid "Logo Primary Color"
-msgstr ""
+msgstr "Основной цвет логотипа"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_document_layout__logo_secondary_color
 msgid "Logo Secondary Color"
-msgstr ""
+msgstr "Второй цвет логотипа"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company__logo_web
@@ -17537,7 +17557,7 @@ msgstr ""
 #. module: base
 #: model:ir.ui.menu,name:base.menu_module_tree
 msgid "Main Apps"
-msgstr ""
+msgstr "Встроенные модули"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_sequence_date_range__sequence_id
@@ -17751,7 +17771,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_skills
 msgid "Manage skills, knowledge and resumé of your employees"
-msgstr ""
+msgstr "Фиксируйте навыки, знания и резюме ваших сотрудников"
 
 #. module: base
 #: model_terms:ir.actions.act_window,help:base.action_partner_title_contact
@@ -19439,25 +19459,25 @@ msgid ""
 msgstr ""
 "Социальные сети Odoo Enterprise ------------------------------ Свяжитесь с "
 "экспертами, следите за тем, что вас интересует, обменивайтесь документами и "
-"рекламируйте лучшие практики по Odoo <a href=\"https://www.odoo.com/page"
-"/enterprise-social-network\">Социальные сети Enterprise</a> . Сделайте "
-"работу с эффективным сотрудничеством между ведомствами, географией, "
-"документами и бизнес-заявкам. Все это при снижении перегрузки электронной "
-"почты. Свяжитесь с экспертами -------------------- В следующий раз, когда у "
-"вас будет вопрос по маркетингу, продажам, исследованиям и разработкам или "
-"любом другом отдела не оставляйте по электронной почте сообщение в Odoo и "
-"получайте ответы от необходи человек. Следуйте тому, что вас интересует "
-"------------------------- Хотите получить информацию о новых функциях "
-"товара, горячие предложения, узкие места проекта или любую другую событие? "
-"Просто следуйте тому, что вас интересует, какая информация вам нужна; не "
-"больше и не меньше. Получите выполнения вещей --------------- Вы можете "
-"обрабатывать (не только читать) папку `Входящие` и легко помечать сообщения "
-"для будущего действия. Начните чувствовать удовлетворение от пустой папки "
-"`Входящие` каждый день; больше нет перегрузки информацией. Рекламируйте "
-"лучшие практики ---------------------- Снизьте количество встреч и "
-"электронных цепей, работая вместе в группах. Создайте группу, чтобы люди "
-"могли обмениваться файлами, обсуждать идеи и голосовать за лучшие практики. "
-"Улучшение доступа к информации и экспертизы "
+"рекламируйте лучшие практики по Odoo <a "
+"href=\"https://www.odoo.com/page/enterprise-social-network\">Социальные сети"
+" Enterprise</a> . Сделайте работу с эффективным сотрудничеством между "
+"ведомствами, географией, документами и бизнес-заявкам. Все это при снижении "
+"перегрузки электронной почты. Свяжитесь с экспертами -------------------- В "
+"следующий раз, когда у вас будет вопрос по маркетингу, продажам, "
+"исследованиям и разработкам или любом другом отдела не оставляйте по "
+"электронной почте сообщение в Odoo и получайте ответы от необходи человек. "
+"Следуйте тому, что вас интересует ------------------------- Хотите получить "
+"информацию о новых функциях товара, горячие предложения, узкие места проекта"
+" или любую другую событие? Просто следуйте тому, что вас интересует, какая "
+"информация вам нужна; не больше и не меньше. Получите выполнения вещей "
+"--------------- Вы можете обрабатывать (не только читать) папку `Входящие` и"
+" легко помечать сообщения для будущего действия. Начните чувствовать "
+"удовлетворение от пустой папки `Входящие` каждый день; больше нет перегрузки"
+" информацией. Рекламируйте лучшие практики ---------------------- Снизьте "
+"количество встреч и электронных цепей, работая вместе в группах. Создайте "
+"группу, чтобы люди могли обмениваться файлами, обсуждать идеи и голосовать "
+"за лучшие практики. Улучшение доступа к информации и экспертизы "
 "------------------------------------------- Разбейте информационные силосы. "
 "Ищите в своих существующих системах, чтобы найти ответы и опыт, необходимые "
 "для быстрого завершения проектов. Сотрудничайте надежно --------------------"
@@ -20567,6 +20587,16 @@ msgstr ""
 "Odoo поможет вам легко отслеживать все действия, связанные с поставщиком."
 
 #. module: base
+#: code:addons/base/models/ir_actions_report.py:0
+#, python-format
+msgid ""
+"Odoo is unable to merge the PDFs attached to the following records:\n"
+"%s\n"
+"\n"
+"Please exclude them from the selection to continue. It's possible to still retrieve those PDFs by selecting each of the affected records individually, which will avoid merging."
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,shortdesc:base.module_odoo_referral
 msgid "Odoo referral program"
 msgstr ""
@@ -20635,6 +20665,12 @@ msgid ""
 msgstr ""
 "Один из документов, которые вы пытаетесь получить, был удален, попробуйте "
 "еще раз после обновления ."
+
+#. module: base
+#: code:addons/base/models/ir_actions_report.py:0
+#, python-format
+msgid "One of the documents, you try to merge is encrypted"
+msgstr ""
 
 #. module: base
 #: code:addons/models.py:0
@@ -21885,7 +21921,7 @@ msgstr "Предварительный просмотр src"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_document_layout__preview_logo
 msgid "Preview logo"
-msgstr ""
+msgstr "Просмотр логотипа"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_report_layout__pdf
@@ -22956,7 +22992,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_base_document_layout
 msgid "Reset to logo colors"
-msgstr ""
+msgstr "Сбросить к цветам логотипа"
 
 #. module: base
 #: code:addons/models.py:0
@@ -23419,6 +23455,7 @@ msgstr "Запланировать и управлять обслуживани�
 #: model:ir.module.module,summary:base.module_industry_fsm
 msgid "Schedule and track onsite operations, invoice time and material"
 msgstr ""
+"Планируйте и отслеживайте работы на местах, актируйте время и материалы"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_calendar
@@ -23521,7 +23558,7 @@ msgstr "Поиск..."
 #: model:ir.model.fields,field_description:base.field_base_document_layout__secondary_color
 #: model:ir.model.fields,field_description:base.field_res_company__secondary_color
 msgid "Secondary Color"
-msgstr ""
+msgstr "Вспомогательный цвет"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_security
@@ -24006,7 +24043,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_skills
 msgid "Skills Management"
-msgstr ""
+msgstr "Управление навыками"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_skills_slides
@@ -25155,6 +25192,12 @@ msgid "The internal user in charge of this contact."
 msgstr "Внутренний пользователь, который отвечает за этот контакт."
 
 #. module: base
+#: code:addons/base/models/res_country.py:106
+#, python-format
+msgid "The layout contains an invalid format key"
+msgstr ""
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_model__inherited_model_ids
 msgid "The list of models that extends the current model."
 msgstr "Список моделей, расширяющих текущую модель."
@@ -25331,6 +25374,13 @@ msgid ""
 "Fields:\n"
 "%(fields_list)s"
 msgstr ""
+"Запрошенная операция не может быть завершена из-за ограничений по безопасности .\n"
+"\n"
+"Тип документа: %(document_kind)s (%(document_model)s)\n"
+"Операция: %(operation)s\n"
+"Пользователь: %(user)s\n"
+"Поля:\n"
+"%(fields_list)s "
 
 #. module: base
 #: code:addons/base/models/ir_rule.py:0
@@ -25458,7 +25508,7 @@ msgstr "Тема"
 #: model:ir.ui.menu,name:base.menu_theme_store
 #: model:ir.ui.menu,name:base.theme_store
 msgid "Theme Store"
-msgstr ""
+msgstr "Магазин тем"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
@@ -25479,7 +25529,7 @@ msgstr ""
 #: model:ir.actions.act_url,name:base.action_third_party
 #: model:ir.ui.menu,name:base.menu_third_party
 msgid "Third-Party Apps"
-msgstr ""
+msgstr "Сторонние модули"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_lang__iso_code
@@ -25710,14 +25760,6 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: code:addons/base/ir/ir_sequence.py:56
-#, python-format
-msgid ""
-"This transaction wasn't executed because another transaction is already "
-"using the same no-gap sequence. Please try again later."
-msgstr ""
-
-#. module: base
 #: model:ir.model.fields,field_description:base.field_res_lang__thousands_sep
 msgid "Thousands Separator"
 msgstr "Разделитель тысяч"
@@ -25746,7 +25788,7 @@ msgstr "Формат времени"
 #: model:ir.module.category,name:base.module_category_human_resources_time_off
 #: model:ir.module.module,shortdesc:base.module_hr_holidays
 msgid "Time Off"
-msgstr ""
+msgstr "Отпуск"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_holidays_calendar
@@ -26478,7 +26520,7 @@ msgstr ""
 #: code:addons/base/static/src/js/res_config_settings.js:0
 #, python-format
 msgid "Unsaved changes"
-msgstr ""
+msgstr "Изменения еще не сохранены"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_unsplash
@@ -26740,7 +26782,7 @@ msgstr "Пользовательские Фильтры"
 #. module: base
 #: model:ir.module.module,summary:base.module_point_of_sale
 msgid "User-friendly PoS interface for shops and restaurants"
-msgstr ""
+msgstr "Удобный интерфейс точки продаж для магазина или ресторана"
 
 #. module: base
 #: code:addons/base/models/ir_model.py:0 code:addons/models.py:0
@@ -27443,12 +27485,12 @@ msgstr "Wkhtmltopdf не было выполнено (код ошибки: %s). 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_work_entry
 msgid "Work Entries"
-msgstr ""
+msgstr "Рабочие записи"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mrp_workorder
 msgid "Work Orders, Planning, Stock Reports."
-msgstr ""
+msgstr "Заказы на производство, планирование, отчеты по складу."
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_payment_sips
@@ -27581,9 +27623,8 @@ msgstr "Нельзя активировать суперпользователя
 #. module: base
 #: code:addons/base/models/res_partner.py:0
 #, python-format
-msgid "You cannot archive a contact linked to an internal user."
+msgid "You cannot archive a contact linked to a portal or internal user."
 msgstr ""
-"Невозможно архивировать контакт, связанный с внутренним пользователем."
 
 #. module: base
 #: code:addons/base/models/res_partner.py:0
@@ -27871,7 +27912,7 @@ msgstr "например, Global Business Solutions"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_partner_form
 msgid "e.g. Mister"
-msgstr ""
+msgstr "например, Господин"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_partner_form

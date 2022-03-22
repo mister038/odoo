@@ -6,7 +6,7 @@ import re
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
 
-FK_HEAD_LIST = ['FK', 'KD_JENIS_TRANSAKSI', 'FG_PENGGANTI', 'NOMOR_FAKTUR', 'MASA_PAJAK', 'TAHUN_PAJAK', 'TANGGAL_FAKTUR', 'NPWP', 'NAMA', 'ALAMAT_LENGKAP', 'JUMLAH_DPP', 'JUMLAH_PPN', 'JUMLAH_PPNBM', 'ID_KETERANGAN_TAMBAHAN', 'FG_UANG_MUKA', 'UANG_MUKA_DPP', 'UANG_MUKA_PPN', 'UANG_MUKA_PPNBM', 'REFERENSI']
+FK_HEAD_LIST = ['FK', 'KD_JENIS_TRANSAKSI', 'FG_PENGGANTI', 'NOMOR_FAKTUR', 'MASA_PAJAK', 'TAHUN_PAJAK', 'TANGGAL_FAKTUR', 'NPWP', 'NAMA', 'ALAMAT_LENGKAP', 'JUMLAH_DPP', 'JUMLAH_PPN', 'JUMLAH_PPNBM', 'ID_KETERANGAN_TAMBAHAN', 'FG_UANG_MUKA', 'UANG_MUKA_DPP', 'UANG_MUKA_PPN', 'UANG_MUKA_PPNBM', 'REFERENSI', 'KODE_DOKUMEN_PENDUKUNG']
 
 LT_HEAD_LIST = ['LT', 'NPWP', 'NAMA', 'JALAN', 'BLOK', 'NOMOR', 'RT', 'RW', 'KECAMATAN', 'KELURAHAN', 'KABUPATEN', 'PROPINSI', 'KODE_POS', 'NOMOR_TELEPON']
 
@@ -63,10 +63,11 @@ class AccountMove(models.Model):
     def _constraint_kode_ppn(self):
         ppn_tag = self.env.ref('l10n_id.ppn_tag')
         for move in self.filtered(lambda m: m.l10n_id_kode_transaksi != '08'):
-            if any(ppn_tag.id in line.tag_ids.ids for line in move.line_ids if line.exclude_from_invoice_tab is False) and any(ppn_tag.id not in line.tag_ids.ids for line in move.line_ids if line.exclude_from_invoice_tab is False):
+            if any(ppn_tag.id in line.tag_ids.ids for line in move.line_ids if line.exclude_from_invoice_tab is False and not line.display_type) \
+                    and any(ppn_tag.id not in line.tag_ids.ids for line in move.line_ids if line.exclude_from_invoice_tab is False and not line.display_type):
                 raise UserError(_('Cannot mix VAT subject and Non-VAT subject items in the same invoice with this kode transaksi.'))
         for move in self.filtered(lambda m: m.l10n_id_kode_transaksi == '08'):
-            if any(ppn_tag.id in line.tag_ids.ids for line in move.line_ids if line.exclude_from_invoice_tab is False):
+            if any(ppn_tag.id in line.tag_ids.ids for line in move.line_ids if line.exclude_from_invoice_tab is False and not line.display_type):
                 raise UserError('Kode transaksi 08 is only for non VAT subject items.')
 
     @api.constrains('l10n_id_tax_number')
@@ -176,8 +177,9 @@ class AccountMove(models.Model):
             eTax['JUMLAH_PPN'] = int(round(move.amount_tax, 0))
             eTax['ID_KETERANGAN_TAMBAHAN'] = '1' if move.l10n_id_kode_transaksi == '07' else ''
             eTax['REFERENSI'] = number_ref
+            eTax['KODE_DOKUMEN_PENDUKUNG'] = '0'
 
-            lines = move.line_ids.filtered(lambda x: x.product_id.id == int(dp_product_id) and x.price_unit < 0)
+            lines = move.line_ids.filtered(lambda x: x.product_id.id == int(dp_product_id) and x.price_unit < 0 and not x.display_type)
             eTax['FG_UANG_MUKA'] = 0
             eTax['UANG_MUKA_DPP'] = int(abs(sum(lines.mapped('price_subtotal'))))
             eTax['UANG_MUKA_PPN'] = int(abs(sum(lines.mapped(lambda l: l.price_total - l.price_subtotal))))
@@ -193,7 +195,7 @@ class AccountMove(models.Model):
             # HOW TO ADD 2 line to 1 line for free product
             free, sales = [], []
 
-            for line in move.line_ids.filtered(lambda l: not l.exclude_from_invoice_tab):
+            for line in move.line_ids.filtered(lambda l: not l.exclude_from_invoice_tab and not l.display_type):
                 # *invoice_line_unit_price is price unit use for harga_satuan's column
                 # *invoice_line_quantity is quantity use for jumlah_barang's column
                 # *invoice_line_total_price is bruto price use for harga_total's column
